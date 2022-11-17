@@ -43,17 +43,19 @@
     "react-router-dom": "6.2.1",
     "react-scripts": "5.0.0",
     "react-table": "7.7.0",
+    "serve": "^14.1.1",
     "stylis": "4.0.13",
     "stylis-plugin-rtl": "2.1.1",
     "web-vitals": "2.1.4",
     "yup": "0.32.11"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": [
